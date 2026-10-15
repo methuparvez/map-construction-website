@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAP CONSTRUCTION LTD.</title>
+<style>
+:root{--navy:#101f3d;--gold:#c9a45c}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#26344a;line-height:1.7}
+header,footer{background:var(--navy);color:white;padding:20px 6%}
+header{border-bottom:3px solid var(--gold)}
+nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+a{color:inherit;text-decoration:none}
+nav a:hover{color:var(--gold)}
+button,.btn{display:inline-block;background:var(--gold);color:var(--navy);border:0;padding:12px 20px;cursor:pointer;font-weight:bold;border-radius:4px}
+.hero{padding:100px 7%;color:white;background:linear-gradient(90deg,#101f3df2,#101f3d99),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80') center/cover}
+.hero h1{font-size:clamp(36px,6vw,65px);line-height:1.15}
+.hero span{color:var(--gold)}
+section{padding:65px 7%}
+.light{background:#f4f6fa}
+h2{color:var(--navy);font-size:32px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;padding:24px;border-bottom:3px solid var(--gold);box-shadow:0 3px 15px #0000000c}
+.card h3{color:var(--navy)}
+.contact{background:var(--navy);color:white}
+.contact h2{color:white}
+input,textarea{display:block;width:100%;padding:13px;margin:10px 0;border:1px solid #ccc;border-radius:4px;font:inherit}
+form{max-width:600px}
+.gold{color:var(--gold)}
+@media(max-width:600px){.hero{padding:65px 6%}section{padding:45px 6%}}
+</style>
+</head>
+<body>
+<header>
+  <h2 style="color:white;margin:0">M<span class="gold">CL</span></h2>
+  <strong>MAP CONSTRUCTION LTD.</strong>
+  <nav>
+    <a href="#home">Home</a><a href="#about">About</a>
+    <a href="#services">Services</a><a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button onclick="toggleLang()">বাংলা / English</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <p class="gold">CONSTRUCTION • ENGINEERING • INFRASTRUCTURE</p>
+  <h1 id="headline">BUILDING TRUST,<br><span>DELIVERING EXCELLENCE.</span></h1>
+  <p id="intro">Committed to quality construction, dependable engineering and infrastructure development in Bangladesh.</p>
+  <a class="btn" href="#services" id="explore">Explore Our Services</a>
+</section>
+
+<section id="about">
+  <h2 id="aboutTitle">Building a Better Future Through Engineering</h2>
+  <p id="aboutText">MAP CONSTRUCTION LTD. is a construction and infrastructure company focused on quality, safety, professional standards and dependable project delivery.</p>
+  <p><strong class="gold">Our commitment:</strong> Quality in every detail. Safety at every stage. Excellence in every project.</p>
+</section>
+
+<section class="light" id="services">
+  <h2 id="servicesTitle">Our Core Services</h2>
+  <div class="cards">
+    <article class="card"><h3>01 · Building Construction</h3><p>Building works and civil engineering construction.</p></article>
+    <article class="card"><h3>02 · Roads & Highways</h3><p>Road development and transportation infrastructure.</p></article>
+    <article class="card"><h3>03 · Bridges & Culverts</h3><p>Bridge, culvert and structural construction.</p></article>
+    <article class="card"><h3>04 · Drainage Systems</h3><p>Drainage and water management infrastructure.</p></article>
+    <article class="card"><h3>05 · Protective Works</h3><p>Civil protection and related infrastructure works.</p></article>
+    <article class="card"><h3>06 · Water Supply</h3><p>Water supply and associated civil infrastructure.</p></article>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects & Experience</h2>
+  <p>Our experience includes building, road, bridge and civil infrastructure works.</p>
+  <p><strong>Website update required:</strong> Add verified project names, photographs, clients and completion dates before publication.</p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact MAP CONSTRUCTION LTD.</h2>
+  <p><strong>Office:</strong> Maya Super Market, 3rd Floor, Niltuli, Faridpur Sadar, Faridpur, Bangladesh</p>
+  <p><strong>Phone:</strong> <a href="tel:+8801733290680">+880 1733 290680</a></p>
+  <p><strong>Email:</strong> <a href="mailto:mapclbd@gmail.com">mapclbd@gmail.com</a></p>
+  <form onsubmit="sendEmail(event)">
+    <input id="name" placeholder="Your name" required>
+    <input id="email" type="email" placeholder="Your email" required>
+    <input id="subject" placeholder="Subject" required>
+    <textarea id="message" placeholder="Your message" required></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+  <small>This demo opens your email application; it does not store messages online.</small>
+</section>
+</main>
+
+<footer>
+  <strong>MAP CONSTRUCTION LTD.</strong><br>
+  <span class="gold">BUILDING TRUST, DELIVERING EXCELLENCE.</span><br>
+  © <span id="year"></span> MAP CONSTRUCTION LTD.
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+let bangla=false;
+function toggleLang(){
+  bangla=!bangla;
+  document.documentElement.lang=bangla?"bn":"en";
+  document.getElementById("headline").innerHTML=bangla
+    ?"আস্থার নির্মাণ,<br><span>সাফল্যের অঙ্গীকার।</span>"
+    :"BUILDING TRUST,<br><span>DELIVERING EXCELLENCE.</span>";
+  document.getElementById("intro").textContent=bangla
+    ?"বাংলাদেশে মানসম্মত নির্মাণ ও অবকাঠামো উন্নয়নে আমরা প্রতিশ্রুতিবদ্ধ।"
+    :"Committed to quality construction, dependable engineering and infrastructure development in Bangladesh.";
+  document.getElementById("aboutTitle").textContent=bangla
+    ?"প্রকৌশলের মাধ্যমে উন্নত ভবিষ্যৎ নির্মাণ":"Building a Better Future Through Engineering";
+  document.getElementById("aboutText").textContent=bangla
+    ?"আমরা গুণগত মান, নিরাপত্তা এবং নির্ভরযোগ্য প্রকল্প বাস্তবায়নে গুরুত্ব দিই।"
+    :"MAP CONSTRUCTION LTD. is a construction and infrastructure company focused on quality, safety, professional standards and dependable project delivery.";
+  document.getElementById("servicesTitle").textContent=bangla?"আমাদের প্রধান সেবাসমূহ":"Our Core Services";
+  document.getElementById("explore").textContent=bangla?"আমাদের সেবাসমূহ":"Explore Our Services";
+}
+function sendEmail(e){
+  e.preventDefault();
+  const body="Name: "+name.value+"\nEmail: "+email.value+"\n\n"+message.value;
+  location.href="mailto:mapclbd@gmail.com?subject="+encodeURIComponent(subject.value)+"&body="+encodeURIComponent(body);
+}
+</script>
+</body>
+</html>
